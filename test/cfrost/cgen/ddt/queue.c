@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/ddt/queue.h"
+#include "cfrost/cgen/ddt/queue.h"
 
 TEST_MAIN(cgen: queue);
 

@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/UnitTest.h"
+#include "cfrost/cgen/UnitTest.h"
 
 /**
  * @file UnitTest.c

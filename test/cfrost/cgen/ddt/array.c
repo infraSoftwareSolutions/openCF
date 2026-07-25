@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/ddt/array.h"
+#include "cfrost/cgen/ddt/array.h"
 
 TEST_MAIN(cgen: array);
 

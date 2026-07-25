@@ -220,7 +220,7 @@
      * @return true if real equals expected, false otherwise.
      * @note Provides optional detailed output with visual separators.
      */
-    static bool ocf_test_str(const char *real, const char *expected, bool details, unsigned int seplen, char sepch)
+    static bool ocf_test_basic_str(const char *real, const char *expected, bool details, unsigned int seplen, char sepch)
     {
         if (strlen(real) != strlen(expected))
         {
@@ -318,7 +318,7 @@
 
     static inline bool ocf_test_ocf_str(ocf_str real, ocf_str expected, bool details, unsigned int seplen, char sepch)
     {
-        return ocf_test_str(real.data, expected.data,
+        return ocf_test_basic_str(real.data, expected.data,
                         details, seplen, sepch);
     }
 
@@ -481,8 +481,8 @@
         printf("\nThe success tests: %zu\n", testResults.success_tests);
         printf("The failed tests: %zu\n", testResults.failed_tests);
         printf("The total tests: %zu\n", testResults.total_tests);
-        printf("Average success rate: %.2f%%\n", ASR(testResults));
-        printf("Average failed rate: %.2f%%\n", AFR(testResults));
+        printf("Average success rate: %.2f%%\n", OCF_ASR(testResults));
+        printf("Average failed rate: %.2f%%\n", OCF_AFR(testResults));
     }
 
     #define ocf_add_test(current, real, expected, details) _Generic((real), \

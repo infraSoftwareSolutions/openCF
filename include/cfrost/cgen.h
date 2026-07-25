@@ -477,7 +477,7 @@
     }
 
     /** @brief Global system variable for environment */
-    static cgen clite_ecosystem = {NULL, 0, NULL, 0, {NULL, NULL, NULL, NULL, 0}, false};
+    static cgen cgen_ecosystem = {NULL, 0, NULL, 0, {NULL, NULL, NULL, NULL, 0}, false};
 
 #endif
 

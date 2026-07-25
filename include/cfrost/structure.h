@@ -32,16 +32,16 @@
         #define ocf_main_start_and_exit int main() { return 0; }
 
         /**
-         * @def ocf_command_main
+         * @def ocf_main_command
          * @brief Define a main function with argc/argv parameters.
          */
-        #define ocf_command_main int main(int argc, char* argv[])
+        #define ocf_main_command int main(int argc, char* argv[])
 
         /**
-         * @def ocf_empty_main
+         * @def ocf_main_empty
          * @brief Define a main function without parameters.
          */
-        #define ocf_empty_main int main()
+        #define ocf_main_empty int main()
 
         #define ocf_main \
             int main
@@ -61,36 +61,36 @@
         #define ocf_procedure(name) void name()
 
         /**
-         * @def ocf_lessIter
+         * @def ocf_iter_less
          * @brief Loop macro for iterating from zero to a limit.
          * @param iterator loop variable name.
          * @param value exclusive upper bound.
          */
-        #define ocf_less(iterator, value)  \
+        #define ocf_iter_less(iterator, value)  \
             size_t iterator = 0;           \
             iterator < value;              \
             iterator++
         
         /**
-         * @def ocf_highIter
+         * @def ocf_iter_high
          * @brief Loop macro for iterating downward from a starting value.
          * @param iterator loop variable name.
          * @param value starting value.
          */
-        #define ocf_high(iterator, value)  \
+        #define ocf_iter_high(iterator, value)  \
             size_t iterator = value;       \
             iterator > 0;                 \
             iterator--
 
         /**
-         * @def inRangeIter
+         * @def ocf_iter_in_range
          * @brief Loop macro for iterating from a start to end using a custom step.
          * @param iterator loop variable name.
          * @param start initial value.
          * @param end exclusive upper bound.
          * @param step increment step.
          */
-        #define ocf_in_range(iterator, start, end, step) \
+        #define ocf_iter_in_range(iterator, start, end, step) \
             size_t iterator = start;                     \
             iterator < end;                              \
             iterator += step
@@ -332,13 +332,20 @@
          * @def command_main
          * @brief Define a main function with argc/argv parameters.
          */
-        #define command_main int main(int argc, char* argv[])
+        #define main_command int main(int argc, char* argv[])
 
         /**
          * @def main_func
          * @brief Define a main function without parameters.
          */
-        #define empty_main int main()
+        #define main_empty int main()
+
+        #define main_loop(instructions) \
+            int main() {                \
+                while(true) {           \
+                    instructions        \
+                }                       \
+            }
 
         #define main_f \
             int main
@@ -348,7 +355,7 @@
          * @brief Return a value from main and close the function body.
          * @param retval return value.
          */
-        #define exit(retval) return (int)retval;
+        #define exit(retval) return (int)retval
 
         /**
          * @def procedure
@@ -363,7 +370,7 @@
          * @param iterator loop variable name.
          * @param value exclusive upper bound.
          */
-        #define less_iter(iterator, value) \
+        #define iter_less(iterator, value) \
             size_t iterator = 0;           \
             iterator < value;              \
             iterator++
@@ -374,7 +381,7 @@
          * @param iterator loop variable name.
          * @param value starting value.
          */
-        #define high_iter(iterator, value) \
+        #define iter_high(iterator, value) \
             size_t iterator = value;       \
             iterator > 0;                  \
             iterator--
@@ -387,9 +394,9 @@
          * @param end exclusive upper bound.
          * @param step increment step.
          */
-        #define in_range_iter(iterator, start, end, step) \
-            size_t iterator = start;                    \
-            iterator < end;                             \
+        #define iter_in_range(iterator, start, end, step) \
+            size_t iterator = start;                      \
+            iterator < end;                               \
             iterator += step
 
         /**

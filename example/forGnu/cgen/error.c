@@ -1,3 +1,5 @@
+#define OPENCF_FOR_GNU
+
 #include "cfrost/cgen/error.h"
 #include "cfrost/structure.h"
 #include <stdio.h>
@@ -6,7 +8,7 @@
 // Example helper function that validates array access
 void process_array_element(int *arr, int size, int index) {
     if (index < 0 || index >= size) {
-        cerror err = error_indexing("Array index out of bounds");
+        ocf_error err = ocf_error_indexing("Array index out of bounds");
         printError(err);
         return;
     }
@@ -16,7 +18,7 @@ void process_array_element(int *arr, int size, int index) {
 // Example helper function that validates variable declaration
 void validate_variable_type(int value, const char *expected_type) {
     if (value < 0 && strcmp(expected_type, "unsigned") == 0) {
-        cerror err = error_declaration("Negative value assigned to unsigned variable");
+        ocf_error err = ocf_error_declaration("Negative value assigned to unsigned variable");
         printError(err);
         return;
     }
@@ -28,7 +30,7 @@ void validate_struct_init(void *ptr, const char *field_name) {
     if (ptr == NULL) {
         char description[256];
         snprintf(description, sizeof(description), "Struct field '%s' was not initialized", field_name);
-        cerror err = error_construction(description);
+        ocf_error err = ocf_error_construction(description);
         printError(err);
         return;
     }
@@ -40,7 +42,7 @@ void process_user_input(int value, int min, int max) {
     if (value < min || value > max) {
         char description[256];
         snprintf(description, sizeof(description), "Input value %d is outside valid range [%d, %d]", value, min, max);
-        cerror err = error_bad_input(description);
+        ocf_error err = ocf_error_bad_input(description);
         printError(err);
         return;
     }
@@ -50,7 +52,7 @@ void process_user_input(int value, int min, int max) {
 // Example function that detects undefined behavior
 void check_undefined_behavior(int *ptr) {
     if (ptr == NULL) {
-        cerror err = error_undefined_behavior("Attempted to dereference NULL pointer");
+        ocf_error err = ocf_error_undefined_behavior("Attempted to dereference NULL pointer");
         printError(err);
         return;
     }
@@ -60,25 +62,25 @@ void check_undefined_behavior(int *ptr) {
 // Example function that validates function arguments
 void divide_numbers(int dividend, int divisor) {
     if (divisor == 0) {
-        cerror err = error_invalid_argument("Division by zero is not allowed");
+        ocf_error err = ocf_error_invalid_argument("Division by zero is not allowed");
         printError(err);
         return;
     }
     printf("✓ Division result: %d / %d = %d\n\n", dividend, divisor, dividend / divisor);
 }
 
-main_empty {
+ocf_main_empty {
     printf("|========================================================|\n");
     printf("|          Error Handling Library - Examples             |\n");
     printf("|========================================================|\n\n");
 
     // ============================================================
-    // Example 1: cerror_init() - Initialize an error
+    // Example 1: ocf_ocf_error_init() - Initialize an error
     // ============================================================
     printf("EXAMPLE 1: Error Initialization\n");
     printf("----------------------------------\n");
     
-    cerror basic_error = error_init();
+    ocf_error basic_error = ocf_error_init();
     printf("Created empty error object\n");
     printf("  name = %s\n", basic_error.name ? basic_error.name : "NULL");
     printf("  description = %s\n", basic_error.description ? basic_error.description : "NULL");
@@ -199,7 +201,7 @@ main_empty {
     
     printf("Checking file handle initialization:\n");
     if (file1.buffer == NULL) {
-        cerror err = error_construction("File buffer not allocated");
+        ocf_error err = ocf_error_construction("File buffer not allocated");
         printError(err);
     } else {
         printf("✓ File buffer properly allocated\n\n");
@@ -208,7 +210,7 @@ main_empty {
     // Simulate buffer validation
     FileHandle file2 = {"output.txt", 512, NULL};
     if (file2.buffer_size <= 0) {
-        cerror err = error_bad_input("Invalid buffer size for file");
+        ocf_error err = ocf_error_bad_input("Invalid buffer size for file");
         printError(err);
     }
 
@@ -228,7 +230,7 @@ main_empty {
     
     // Validate port range
     if (config.port < 1 || config.port > 65535) {
-        cerror err = error_invalid_argument("Server port must be between 1 and 65535");
+        ocf_error err = ocf_error_invalid_argument("Server port must be between 1 and 65535");
         printError(err);
     } else {
         printf("✓ Server port validation passed: %d\n", config.port);
@@ -236,7 +238,7 @@ main_empty {
     
     // Validate timeout
     if (config.timeout <= 0) {
-        cerror err = error_bad_input("Timeout value must be greater than 0");
+        ocf_error err = ocf_error_bad_input("Timeout value must be greater than 0");
         printError(err);
     } else {
         printf("✓ Timeout validation passed: %d seconds\n", config.timeout);
@@ -244,7 +246,7 @@ main_empty {
     
     // Validate max connections
     if (config.max_connections > 10000) {
-        cerror err = error_undefined_behavior("Max connections too high may cause resource exhaustion");
+        ocf_error err = ocf_error_undefined_behavior("Max connections too high may cause resource exhaustion");
         printError(err);
     } else {
         printf("✓ Max connections validation passed: %d\n\n", config.max_connections);
@@ -260,7 +262,7 @@ main_empty {
     int database_id = -1;  // Invalid ID
     
     if (database_id < 0) {
-        cerror err = error_invalid_argument("Database record ID must be positive");
+        ocf_error err = ocf_error_invalid_argument("Database record ID must be positive");
         printError(err);
     }
     
@@ -273,7 +275,7 @@ main_empty {
         snprintf(desc, sizeof(desc), 
                 "Requested memory (%d bytes) exceeds limit (%d bytes)", 
                 requested_memory, max_memory);
-        cerror err = error_bad_input(desc);
+        ocf_error err = ocf_error_bad_input(desc);
         printError(err);
     }
 
@@ -283,7 +285,7 @@ main_empty {
     printf("|========================================================|\n");
     printf("|  Error Handling Library provides comprehensive errors: |\n");
     printf("|                                                        |\n");
-    printf("|  • cerror_init()         - Initialize error object     |\n");
+    printf("|  • ocf_ocf_error_init()         - Initialize error object     |\n");
     printf("|  • printError()          - Display error details       |\n");
     printf("|  • wrong_indexing()      - Array/index errors          |\n");
     printf("|  • wrong_declaration()   - Type/declaration errors     |\n");
@@ -296,5 +298,5 @@ main_empty {
     printf("|                       and line number for debugging    |\n");
     printf("|========================================================|\n");
 
-    exit(false);
+    ocf_exit(false);
 }

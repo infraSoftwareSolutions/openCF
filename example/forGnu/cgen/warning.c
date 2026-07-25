@@ -1,20 +1,22 @@
+#define OPENCF_FOR_GNU
+
 #include "cfrost/cgen/warning.h"
 #include "cfrost/structure.h"
 #include <stdio.h>
 #include <string.h>
 
-main_empty {
+ocf_main_empty {
     printf("╔════════════════════════════════════════════════════════╗\n");
     printf("║        Warning Handling Library - Examples             ║\n");
     printf("╚════════════════════════════════════════════════════════╝\n\n");
 
     // ============================================================
-    // Example 1: cwarning_init() - Initialize an empty warning
+    // Example 1: ocf_warning_init() - Initialize an empty warning
     // ============================================================
     printf("📖 EXAMPLE 1: Warning Initialization\n");
     printf("──────────────────────────────────\n");
     
-    cwarning basic_warning = cwarning_init();
+    ocf_warning basic_warning = ocf_warning_init();
     printf("Created empty warning object\n");
     printf("  name = %s\n", basic_warning.name ? basic_warning.name : "NULL");
     printf("  description = %s\n", basic_warning.description ? basic_warning.description : "NULL");
@@ -30,7 +32,7 @@ main_empty {
     int index = 10;  // Out of bounds
     
     if (index >= 5) {
-        cwarning w = cwarning_wrong_indexing("Array index exceeds valid range [0-4]");
+        ocf_warning w = ocf_warning_wrong_indexing("Array index exceeds valid range [0-4]");
         printWarning(w);
     }
 
@@ -42,7 +44,7 @@ main_empty {
     
     unsigned int positive_only = -5;  // Wrong: negative assigned to unsigned
     if (positive_only < 0) {
-        cwarning w = cwarning_wrong_declaration("Negative value assigned to unsigned integer variable");
+        ocf_warning w = ocf_warning_wrong_declaration("Negative value assigned to unsigned integer variable");
         printWarning(w);
     }
 
@@ -62,7 +64,7 @@ main_empty {
     buf.size = 0;
     
     if (buf.data == NULL) {
-        cwarning w = cwarning_wrong_construction("DataBuffer.data was not properly initialized");
+        ocf_warning w = ocf_warning_wrong_construction("DataBuffer.data was not properly initialized");
         printWarning(w);
     }
 
@@ -74,7 +76,7 @@ main_empty {
     
     int user_port = 99999;  // Port out of range
     if (user_port > 65535 || user_port < 1) {
-        cwarning w = cwarning_bad_input("Port number must be between 1 and 65535");
+        ocf_warning w = ocf_warning_bad_input("Port number must be between 1 and 65535");
         printWarning(w);
     }
 
@@ -86,7 +88,7 @@ main_empty {
     
     int *null_ptr = NULL;
     if (null_ptr == NULL) {
-        cwarning w = cwarning_undefined_behavior("Attempted to use NULL pointer");
+        ocf_warning w = ocf_warning_undefined_behavior("Attempted to use NULL pointer");
         printWarning(w);
     }
 
@@ -98,7 +100,7 @@ main_empty {
     
     int divisor = 0;  // Invalid argument
     if (divisor == 0) {
-        cwarning w = cwarning_invalid_argument("Division by zero is not allowed");
+        ocf_warning w = ocf_warning_invalid_argument("Division by zero is not allowed");
         printWarning(w);
     }
 
@@ -110,7 +112,7 @@ main_empty {
     
     int score = 150;  // Should be 0-100
     if (score > 100 || score < 0) {
-        cwarning w = cwarning_out_of_range("Score value must be between 0 and 100");
+        ocf_warning w = ocf_warning_out_of_range("Score value must be between 0 and 100");
         printWarning(w);
     }
 
@@ -120,7 +122,7 @@ main_empty {
     printf("📖 EXAMPLE 9: Internal Problem Warning\n");
     printf("──────────────────────────────────────\n");
     
-    cwarning w_internal = cwarning_internal_problem("Memory allocation failed in buffer manager");
+    ocf_warning w_internal = ocf_warning_internal_problem("Memory allocation failed in buffer manager");
     printWarning(w_internal);
 
     // ============================================================
@@ -139,19 +141,19 @@ main_empty {
     
     // Validate endpoint
     if (request.endpoint == NULL) {
-        cwarning w = cwarning_bad_input("API endpoint URL cannot be empty");
+        ocf_warning w = ocf_warning_bad_input("API endpoint URL cannot be empty");
         printWarning(w);
     }
     
     // Validate timeout
     if (request.timeout <= 0) {
-        cwarning w = cwarning_invalid_argument("API timeout must be greater than 0 milliseconds");
+        ocf_warning w = ocf_warning_invalid_argument("API timeout must be greater than 0 milliseconds");
         printWarning(w);
     }
     
     // Validate retry count
     if (request.retry_count < 0 || request.retry_count > 5) {
-        cwarning w = cwarning_out_of_range("Retry count should be between 0 and 5");
+        ocf_warning w = ocf_warning_out_of_range("Retry count should be between 0 and 5");
         printWarning(w);
     }
 
@@ -174,13 +176,13 @@ main_empty {
     
     // Check file size
     if (file.file_size < 0) {
-        cwarning w = cwarning_bad_input("File size cannot be negative");
+        ocf_warning w = ocf_warning_bad_input("File size cannot be negative");
         printWarning(w);
     }
     
     // Check buffer allocation
     if (file.buffer == NULL && file.file_size > 0) {
-        cwarning w = cwarning_wrong_construction("File buffer not allocated despite positive file size");
+        ocf_warning w = ocf_warning_wrong_construction("File buffer not allocated despite positive file size");
         printWarning(w);
     }
 
@@ -200,13 +202,13 @@ main_empty {
     
     // Check pool size
     if (pool.pool_size <= 0) {
-        cwarning w = cwarning_bad_input("Connection pool size must be at least 1");
+        ocf_warning w = ocf_warning_bad_input("Connection pool size must be at least 1");
         printWarning(w);
     }
     
     // Check active connections exceed max
     if (pool.active_connections > pool.max_connections) {
-        cwarning w = cwarning_undefined_behavior("Active connections exceed maximum allowed connections");
+        ocf_warning w = ocf_warning_undefined_behavior("Active connections exceed maximum allowed connections");
         printWarning(w);
     }
 
@@ -216,18 +218,18 @@ main_empty {
     printf("📖 EXAMPLE 13: Warning Counter Tracking\n");
     printf("──────────────────────────────────────\n");
     
-    size_t initial_count = cwarningCounter;
+    size_t initial_count = ocf_warning_counter;
     printf("Initial warning counter: %zu\n", initial_count);
     
-    cwarning w1 = cwarning_wrong_indexing("First warning");
-    cwarning w2 = cwarning_bad_input("Second warning");
-    cwarning w3 = cwarning_invalid_argument("Third warning");
+    ocf_warning w1 = ocf_warning_wrong_indexing("First warning");
+    ocf_warning w2 = ocf_warning_bad_input("Second warning");
+    ocf_warning w3 = ocf_warning_invalid_argument("Third warning");
     
     printf("After creating 3 warnings:\n");
     printf("  Warning 1 number: %zu\n", w1.number);
     printf("  Warning 2 number: %zu\n", w2.number);
     printf("  Warning 3 number: %zu\n", w3.number);
-    printf("  Current counter: %zu\n\n", cwarningCounter);
+    printf("  Current counter: %zu\n\n", ocf_warning_counter);
 
     // ============================================================
     // Example 14: Batch Warning Processing
@@ -246,25 +248,25 @@ main_empty {
     bool has_warnings = false;
     
     if (config_port < 1 || config_port > 65535) {
-        cwarning w = cwarning_invalid_argument("Invalid port configuration");
+        ocf_warning w = ocf_warning_invalid_argument("Invalid port configuration");
         printWarning(w);
         has_warnings = true;
     }
     
     if (config_timeout <= 0) {
-        cwarning w = cwarning_bad_input("Timeout must be positive");
+        ocf_warning w = ocf_warning_bad_input("Timeout must be positive");
         printWarning(w);
         has_warnings = true;
     }
     
     if (config_host == NULL) {
-        cwarning w = cwarning_wrong_declaration("Host cannot be NULL");
+        ocf_warning w = ocf_warning_wrong_declaration("Host cannot be NULL");
         printWarning(w);
         has_warnings = true;
     }
     
     if (max_workers <= 0) {
-        cwarning w = cwarning_out_of_range("Worker count must be at least 1");
+        ocf_warning w = ocf_warning_out_of_range("Worker count must be at least 1");
         printWarning(w);
         has_warnings = true;
     }
@@ -281,7 +283,7 @@ main_empty {
     printf("╔════════════════════════════════════════════════════════╗\n");
     printf("║  Warning Handling Library provides 9 warning types:    ║\n");
     printf("║                                                        ║\n");
-    printf("║  • cwarning_init()       - Create empty warning       ║\n");
+    printf("║  • ocf_warning_init()       - Create empty warning       ║\n");
     printf("║  • wrong_indexing()      - Index/array warnings       ║\n");
     printf("║  • wrong_declaration()   - Type/declaration warnings  ║\n");
     printf("║  • wrong_construction()  - Initialization warnings    ║\n");
@@ -295,5 +297,5 @@ main_empty {
     printf("║                      line number, and sequence count  ║\n");
     printf("╚════════════════════════════════════════════════════════╝\n");
 
-    exit(false);
+    ocf_exit(false);
 }

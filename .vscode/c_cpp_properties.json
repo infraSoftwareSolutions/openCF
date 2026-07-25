@@ -11,7 +11,7 @@
 
             "includePath": [
                 "C:/msys64/ucrt64/include",
-                "C:/Users/User/OneDrive/Documents/GitHub/openCF/include"
+                "C:/Users/User/OneDrive/Documents/GitHub/ISS/openCF/include"
             ],
 
             "defines": [
@@ -33,7 +33,7 @@
             "includePath": [
                 "C:/msys64/ucrt64/include",
                 "C:/msys64/ucrt64/include/c++/15.2.0",
-                "C:/Users/User/OneDrive/Documents/GitHub/openCF/include"
+                "C:/Users/User/OneDrive/Documents/GitHub/ISS/openCF/include"
             ],
 
             "defines": [

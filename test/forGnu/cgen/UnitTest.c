@@ -1,6 +1,6 @@
 #define OPENCF_FOR_GNU
 #include "cfrost.h"
-#include "cgen/UnitTest.h"
+#include "cfrost/cgen/UnitTest.h"
 
 /**
  * @file UnitTest.c

@@ -1,6 +1,6 @@
 #include "cfrost/structure.h"
 #include "cfrost/test.h"
-#include "cgen/string.h"
+#include "cfrost/cgen/string.h"
 
 /**
  * @file micros.c

@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/ddt/stack.h"
+#include "cfrost/cgen/ddt/stack.h"
 
 TEST_MAIN(cgen: stack);
 

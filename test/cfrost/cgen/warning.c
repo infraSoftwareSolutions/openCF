@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/warning.h"
+#include "cfrost/cgen/warning.h"
 
 TEST_MAIN(cgen: warning);
 

@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/ddt/dynamic.h"
+#include "cfrost/cgen/ddt/dynamic.h"
 
 TEST_MAIN(cgen: dynamic);
 

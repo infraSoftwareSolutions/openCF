@@ -1,5 +1,5 @@
 #define OPENCF_FOR_GNU
-#include "cgen/bitUtilitys.h"
+#include "cfrost/cgen/bitUtilitys.h"
 #include "cfrost.h"
 
 /**

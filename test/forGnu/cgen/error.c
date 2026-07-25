@@ -1,6 +1,6 @@
 #define OPENCF_FOR_GNU
 #include "cfrost.h"
-#include "cgen/error.h"
+#include "cfrost/cgen/error.h"
 
 OCF_TEST_MAIN(cgen: error);
 

@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/ternary.h"
+#include "cfrost/cgen/ternary.h"
 
 TEST_MAIN(cgen: ternary);
 

@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/error.h"
+#include "cfrost/cgen/error.h"
 
 TEST_MAIN(cgen: error);
 

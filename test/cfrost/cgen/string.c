@@ -1,5 +1,5 @@
 #include "cfrost.h"
-#include "cgen/string.h"
+#include "cfrost/cgen/string.h"
 
 TEST_MAIN(cgen: string);
 

@@ -24,10 +24,10 @@
 #if defined(OPENCF_FOR_GNU)
 
     /// @brief Prints a newline character.
-    static inline void OCF_PNL() { printf("\n"); }
+    static inline void OCF_PNL(void) { printf("\n"); }
 
     /// @brief Prints a specified number of tab characters.
-    static inline void OCF_PTab() { printf("\t"); }
+    static inline void OCF_PTab(void) { printf("\t"); }
 
     /**
      * @brief Returns a message indicating the result of a test.
