@@ -1,5 +1,5 @@
-#ifndef METACORE___CGEN___BITUTILITYS_H
-#define METACORE___CGEN___BITUTILITYS_H
+#ifndef OPENCF___CFROST___CGEN___BITUTILITYS_H
+#define OPENCF___CFROST___CGEN___BITUTILITYS_H
 
 #include "bitUtilitys/count_bit.h"
 #include "bitUtilitys/get_bit.h"
@@ -180,4 +180,4 @@
 
 #endif
 
-#endif // METACORE___CGEN___BITUTILITYS_H
+#endif // OPENCF___CFROST___CGEN___BITUTILITYS_H

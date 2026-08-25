@@ -7,8 +7,8 @@
 
 #include <stdint.h>
 
-#ifndef METACORE___CGEN___TERNARY_TLIMITES_H
-#define METACORE___CGEN___TERNARY_TLIMITES_H
+#ifndef OPENCF___CFROST___CGEN___TERNARY_TLIMITES_H
+#define OPENCF___CFROST___CGEN___TERNARY_TLIMITES_H
 
 #if defined(OPENCF_FOR_GNU)
 
@@ -60,4 +60,4 @@
     #define MIN_B27 -13
 #endif
 
-#endif // METACORE___CGEN___TERNARY_TLIMITES_H
+#endif // OPENCF___CFROST___CGEN___TERNARY_TLIMITES_H

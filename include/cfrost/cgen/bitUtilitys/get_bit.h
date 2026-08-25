@@ -39,8 +39,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#ifndef METACORE___CGEN___BITUTILITYS_GET_BIT_H
-#define METACORE___CGEN___BITUTILITYS_GET_BIT_H
+#ifndef OPENCF___CFROST___CGEN___BITUTILITYS_GET_BIT_H
+#define OPENCF___CFROST___CGEN___BITUTILITYS_GET_BIT_H
 
 #if defined(OPENCF_FOR_GNU)
 
@@ -304,4 +304,4 @@
 
 #endif
 
-#endif // METACORE___CGEN___BITUTILITYS_GET_BIT_H
+#endif // OPENCF___CFROST___CGEN___BITUTILITYS_GET_BIT_H

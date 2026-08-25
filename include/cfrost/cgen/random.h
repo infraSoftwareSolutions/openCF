@@ -1,5 +1,5 @@
-#ifndef METACORE___CGEN___RANDOM_H
-#define METACORE___CGEN___RANDOM_H
+#ifndef OPENCF___CFROST___CGEN___RANDOM_H
+#define OPENCF___CFROST___CGEN___RANDOM_H
 
 /**
  * @file random.h
@@ -61,4 +61,4 @@
 
 #endif
 
-#endif // METACORE___CGEN___RANDOM_H
+#endif // OPENCF___CFROST___CGEN___RANDOM_H

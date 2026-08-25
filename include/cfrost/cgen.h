@@ -13,8 +13,8 @@
  */
 
 
-#ifndef METACORE___CGEN_H
-#define METACORE___CGEN_H
+#ifndef OPENCF___CFROST___CGEN_H
+#define OPENCF___CFROST___CGEN_H
 
 #include "structure.h"
 
@@ -481,4 +481,4 @@
 
 #endif
 
-#endif // METACORE___CGEN_H
+#endif // OPENCF___CFROST___CGEN_H

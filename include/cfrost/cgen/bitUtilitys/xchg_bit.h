@@ -28,8 +28,8 @@
 #include "set_bit.h"
 #include "reset_bit.h"
 
-#ifndef METACORE___CGEN___BITUTILITYS_XCHG_BIT_H
-#define METACORE___CGEN___BITUTILITYS_XCHG_BIT_H
+#ifndef OPENCF___CFROST___CGEN___BITUTILITYS_XCHG_BIT_H
+#define OPENCF___CFROST___CGEN___BITUTILITYS_XCHG_BIT_H
 
 #if defined(OPENCF_FOR_GNU)
     /// @brief Exchange (swap) two bit positions in an 8-bit unsigned integer

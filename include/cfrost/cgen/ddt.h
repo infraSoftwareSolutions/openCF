@@ -1,5 +1,5 @@
-#ifndef METACORE___CGEN___DDT_H
-#define METACORE___CGEN___DDT_H
+#ifndef OPENCF___CFROST___CGEN___DDT_H
+#define OPENCF___CFROST___CGEN___DDT_H
 
 // DDT: Dynamic Data Types
 
@@ -8,4 +8,4 @@
 #include "ddt/queue.h"
 #include "ddt/dynamic.h"
 
-#endif // METACORE___CGEN___DDT_H
+#endif // OPENCF___CFROST___CGEN___DDT_H

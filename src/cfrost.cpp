@@ -8,11 +8,11 @@
 
 namespace cfrost {
     namespace data {
-        hash_map<str, str> var_types;
-        hash_map<str, str> obj;
-        hash_map<str, str> func;
-        hash_map<str, str> prefix;
-        const hash_map<str, str> postfix{
+        ocf::hash_map<ocf::str, ocf::str>  var_types;
+        ocf::hash_map<ocf::str, ocf::str>  obj;
+        ocf::hash_map<ocf::str, ocf::str>  func;
+        ocf::hash_map<ocf::str, ocf::str>  prefix;
+        const ocf::hash_map<ocf::str, ocf::str>  postfix{
             {"bool", "bl"},
             {"char", "ch"},
             {"short", "si16"},
@@ -34,7 +34,7 @@ namespace cfrost {
     }
 
     namespace tools {
-        bool is_type(const str& command) noexcept {
+        bool is_type(const ocf::str& command) noexcept {
             if(command == "bool") return true;
             else if(command == "char") return true;
             else if(command == "short") return true;
@@ -73,7 +73,7 @@ namespace cfrost {
 
     class token {
         private:
-        str tok;
+        ocf::str tok;
         char t;
         token_type type;
         public:
@@ -91,15 +91,15 @@ namespace cfrost {
             this->type = other.type;
         }
 
-        inline void operator=(const str& tok) noexcept { this->tok = tok; }
+        inline void operator=(const ocf::str& tok) noexcept { this->tok = tok; }
         inline void operator=(const char& t) noexcept { this->t = t; }
         inline void operator=(const token_type& type) noexcept { this->type = type; }
 
-        inline bool operator==(const str& tok) noexcept { return this->tok == tok; }
+        inline bool operator==(const ocf::str& tok) noexcept { return this->tok == tok; }
         inline bool operator==(const char& t) noexcept { return this->t == t; }
         inline bool operator==(const token_type& type) noexcept { return this->type == type; }
 
-        inline bool operator!=(const str& tok) noexcept { return this->tok != tok; }
+        inline bool operator!=(const ocf::str& tok) noexcept { return this->tok != tok; }
         inline bool operator!=(const char& t) noexcept { return this->t != t; }
         inline bool operator!=(const token_type& type) noexcept { return this->type != type; }
 
@@ -112,13 +112,13 @@ namespace cfrost {
         }
     };
 
-    que<str> preformater(const std::filesystem::path& source) noexcept {
+    ocf::que<ocf::str> preformater(const std::filesystem::path& source) noexcept {
         for(const auto& entry : std::filesystem::directory_iterator(source)) {
             if(entry.is_directory()) preformater(entry.path());
             else if(entry.path().extension() == ".c") {
                 std::ifstream file(entry.path());
-                str command;
-                que<str> formatted;
+                ocf::str command;
+                ocf::que<ocf::str> formatted;
                 while(std::getline(file, command)) {
                     if(command.empty()) continue;
                     else formatted.push(command);
@@ -129,13 +129,13 @@ namespace cfrost {
         }
     }
 
-    que<que<token>> lexer(que<str>& source) noexcept {
-        que<que<token>> result;
+    ocf::que<ocf::que<token>> lexer(ocf::que<ocf::str>& source) noexcept {
+        ocf::que<ocf::que<token>> result;
         while(!source.empty()) {
-            que<token> temp_queue;
+            ocf::que<token> temp_queue;
             token temp_token;
             bool is_new_name = false;
-            str command = source.front(); source.pop();
+            ocf::str command = source.front(); source.pop();
             for(char c : command) {
                 if( c == '(' ||
                     c == ')' ||
@@ -172,11 +172,11 @@ namespace cfrost {
                 temp_token.clear();
             }
             result.push(temp_queue);
-            temp_queue = que<token>();
+            temp_queue = ocf::que<token>();
         }
     }
 
-    const que<str> formater(const que<token>& tokens) noexcept;
+    const ocf::que<ocf::str> formater(const ocf::que<token>& tokens) noexcept;
 }
 
 int main() {

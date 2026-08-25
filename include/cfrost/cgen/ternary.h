@@ -1,5 +1,5 @@
-#ifndef METACORE___CGEN___TERNARY_H
-#define METACORE___CGEN___TERNARY_H
+#ifndef OPENCF___CFROST___CGEN___TERNARY_H
+#define OPENCF___CFROST___CGEN___TERNARY_H
 
 #include "ternary/B27.h"
 #include "ternary/tirt.h"
@@ -9,4 +9,4 @@
 #include "ternary/utirt.h"
 #include "ternary/utyrt.h"
 
-#endif // METACORE___CGEN___TERNARY_H
+#endif // OPENCF___CFROST___CGEN___TERNARY_H

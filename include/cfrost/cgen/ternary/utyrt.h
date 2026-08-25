@@ -10,8 +10,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#ifndef METACORE___CGEN___TERNARY_UTYRT_H
-#define METACORE___CGEN___TERNARY_UTYRT_H
+#ifndef OPENCF___CFROST___CGEN___TERNARY_UTYRT_H
+#define OPENCF___CFROST___CGEN___TERNARY_UTYRT_H
 
 #if defined(OPENCF_FOR_GNU)
 
@@ -439,4 +439,4 @@
 
 #endif
 
-#endif // METACORE___CGEN___TERNARY_UTYRT_H
+#endif // OPENCF___CFROST___CGEN___TERNARY_UTYRT_H

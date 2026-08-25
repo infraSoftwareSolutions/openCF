@@ -13,8 +13,8 @@
 #include <limits.h>
 #include <stdint.h>
 
-#ifndef METACORE___CGEN___DDT_DYNAMIC_H
-#define METACORE___CGEN___DDT_DYNAMIC_H
+#ifndef OPENCF___CFROST___CGEN___DDT_DYNAMIC_H
+#define OPENCF___CFROST___CGEN___DDT_DYNAMIC_H
 
     #if defined(OPENCF_FOR_GNU)
             const uint8_t 
@@ -859,4 +859,4 @@
 
         static inline bool cdynamic_is_double(cdynamic self) { return self.id == dyn_enum_double; }
     #endif
-#endif // METACORE___CGEN___DDT_DYNAMIC_H
+#endif // OPENCF___CFROST___CGEN___DDT_DYNAMIC_H

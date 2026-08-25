@@ -28,8 +28,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#ifndef METACORE___CGEN___BITUTILITYS_TOGGLE_BIT_H
-#define METACORE___CGEN___BITUTILITYS_TOGGLE_BIT_H
+#ifndef OPENCF___CFROST___CGEN___BITUTILITYS_TOGGLE_BIT_H
+#define OPENCF___CFROST___CGEN___BITUTILITYS_TOGGLE_BIT_H
 
 #if defined(OPENCF_FOR_GNU)
     /// @brief Toggle (flip) bit at specified position in 8-bit number

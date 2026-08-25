@@ -8,8 +8,8 @@
 #include <stdio.h>
 #include "tlimites.h"
 
-#ifndef METACORE___CGEN___TERNARY_UB27_H
-#define METACORE___CGEN___TERNARY_UB27_H
+#ifndef OPENCF___CFROST___CGEN___TERNARY_UB27_H
+#define OPENCF___CFROST___CGEN___TERNARY_UB27_H
 
 #if defined(OPENCF_FOR_GNU)
 
@@ -83,4 +83,4 @@
 
 #endif
 
-#endif // METACORE___CGEN___TERNARY_UB27_H
+#endif // OPENCF___CFROST___CGEN___TERNARY_UB27_H

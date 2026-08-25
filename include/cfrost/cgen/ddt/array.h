@@ -11,8 +11,8 @@
 #include <stdlib.h>
 #include "dynamic.h"
 
-#ifndef METACORE___CGEN___DDT_ARRAY_H
-#define METACORE___CGEN___DDT_ARRAY_H
+#ifndef OPENCF___CFROST___CGEN___DDT_ARRAY_H
+#define OPENCF___CFROST___CGEN___DDT_ARRAY_H
 
 #if defined(OPENCF_FOR_GNU)
 
@@ -618,4 +618,4 @@
 
 #endif
 
-#endif // METACORE___CGEN___DDT_ARRAY_H
+#endif // OPENCF___CFROST___CGEN___DDT_ARRAY_H

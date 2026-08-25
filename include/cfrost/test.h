@@ -22,29 +22,29 @@
              * @def OCF_TEST_SUMMARY
              * @brief Print a C++ test summary using std::cout.
              */
-            #define OCF_TEST_SUMMARY                                \
-                std::cout                                           \
-                << "\n-------------------------------"              \
-                << "\n<<<<<<<<< test summary >>>>>>>>"              \
-                << "\n-------------------------------"              \
-                << "\nTEST NAME: " << testName                      \
-                << "\npassed tests: " << tests_passed               \
-                << "\nfailed tests: " << tests_failed               \
-                << "\ntotal tests: " << total_tests;                \
-                if (total_tests > 0)                                \
-                {                                                   \
-                    std::cout                                       \
-                    << "\npassed tests ratio: "                     \
-                    << (double)(100 * (tests_passed / total_tests)) \
-                    << "\nfailed tests ratio: "                     \
-                    << (double)(100 * (tests_failed / total_tests));\
-                }                                                   \
-                else                                                \
-                {                                                   \
-                    std::cout                                       \
-                    << "\npassed tests ratio: 0.0"                  \
-                    << "\nfailed tests ratio: 0.0";                 \
-                }                                                   \
+            #define OCF_TEST_SUMMARY                                 \
+                std::cout                                            \
+                << "\n-------------------------------"               \
+                << "\n<<<<<<<<< test summary >>>>>>>>"               \
+                << "\n-------------------------------"               \
+                << "\nTEST NAME: " << testName                       \
+                << "\npassed tests: " << tests_passed                \
+                << "\nfailed tests: " << tests_failed                \
+                << "\ntotal tests: " << total_tests;                 \
+                if (total_tests > 0)                                 \
+                {                                                    \
+                    std::cout                                        \
+                    << "\npassed tests ratio: "                      \
+                    << (double)(100 * (tests_passed / total_tests))  \
+                    << "\nfailed tests ratio: "                      \
+                    << (double)(100 * (tests_failed / total_tests)); \
+                }                                                    \
+                else                                                 \
+                {                                                    \
+                    std::cout                                        \
+                    << "\npassed tests ratio: 0.0"                   \
+                    << "\nfailed tests ratio: 0.0";                  \
+                }                                                    \
                 std::cout << "\n-------------------------------\n"
 
             /**

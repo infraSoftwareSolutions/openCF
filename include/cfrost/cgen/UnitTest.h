@@ -20,8 +20,8 @@
 #include <math.h>
 #include <stdbool.h>
 
-#ifndef METACORE___CGEN___UNITTEST_H
-#define METACORE___CGEN___UNITTEST_H
+#ifndef OPENCF___CFROST___CGEN___UNITTEST_H
+#define OPENCF___CFROST___CGEN___UNITTEST_H
 
 #if defined(OPENCF_FOR_GNU)
 
@@ -999,4 +999,4 @@
 
 #endif
 
-#endif // METACORE___CGEN___UNITTEST_H
+#endif // OPENCF___CFROST___CGEN___UNITTEST_H
