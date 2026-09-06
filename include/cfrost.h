@@ -43,11 +43,17 @@
     #include "cfrost/object_data.h"
     #include "cfrost/structure.h"
     #include "cfrost/test.h"
-    #include "cfrost/cgen.h"
+    #include "cfrost/types.h"
+    #if defined(__cplusplus)
+        #include "cfrost/data_structure.hpp"
+    #endif
 #else
     #include "cfrost/structure.h"
     #include "cfrost/test.h"
-    #include "cfrost/cgen.h"
+    #include "cfrost/types.h"
+    #if defined(__cplusplus)
+        #include "cfrost/data_structure.hpp"
+    #endif
 #endif // cobject_data_micros
 
 #endif // OPENCF___CFROST_H

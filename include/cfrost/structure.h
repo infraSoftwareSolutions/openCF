@@ -1,3 +1,4 @@
+#pragma once
 #ifndef OPENCF___CFROST___STRUCTURE_H
 #define OPENCF___CFROST___STRUCTURE_H
 
@@ -249,68 +250,8 @@
  */
 #define ocf_lambda_v(parameters) parameters->void
 
-#include <string>
-#include <functional>
-#include <vector>
-#include <queue>
-#include <unordered_map>
-#include <initializer_list>
-
 #define ocf_enable_procedure_if(condition, name) \
     std::enable_if_t<condition, void> name(void)
-
-namespace ocf
-{
-
-    // template <typename T1, typename T2>
-    // using enable_arithmetic = std::enable_if<std::is_arithmetic<T1>::value, T2>::type;
-
-    template <bool T1, typename T2>
-    using enable_if = std::enable_if_t<T1, T2>;
-
-    /**
-     * @typedef str
-     * @brief Alias for std::string.
-     */
-    using str = std::string;
-
-    /**
-     * @typedef func
-     * @brief Alias for std::function<T>.
-     */
-    template <typename T>
-    using func = std::function<T>;
-
-    /**
-     * @typedef vec
-     * @brief Alias for std::vector<T>.
-     */
-    template <typename T>
-    using vec = std::vector<T>;
-
-    /**
-     * @typedef que
-     * @brief Alias for std::queue<T>.
-     */
-    template <typename T>
-    using que = std::queue<T>;
-
-    /**
-     * @typedef hash_map
-     * @brief Alias for std::unordered_map<T, U>.
-     */
-    template <typename T, typename U>
-    using hash_map = std::unordered_map<T, U>;
-
-    /**
-     * @typedef initList
-     * @brief Alias for std::initializer_list<T>.
-     */
-    template <typename T>
-    using initList = std::initializer_list<T>;
-
-}
-
 #endif // __cplusplus
 
 #else
@@ -541,70 +482,8 @@ namespace ocf
  */
 #define lambda_v(parameters) parameters->void
 
-#include <string>
-#include <functional>
-#include <vector>
-#include <queue>
-#include <unordered_map>
-#include <initializer_list>
-
 #define enable_procedure_if(condition, name) \
     std::enable_if_t<condition, void> name(void)
-
-namespace ocf
-{
-
-    // template <typename T1, typename T2>
-    // using enable_arithmetic = std::enable_if<std::is_arithmetic<T1>::value, T2>::type;
-
-    template <bool T1, typename T2>
-    using enable_if = std::enable_if_t<T1, T2>;
-
-    /**
-     * @typedef str
-     * @brief Alias for std::string.
-     */
-    using str = std::string;
-
-    /**
-     * @typedef func
-     * @brief Alias for std::function<T>.
-     */
-    template <typename T>
-    using func = std::function<T>;
-
-    /**
-     * @typedef vec
-     * @brief Alias for std::vector<T>.
-     */
-    template <typename T>
-    using vec = std::vector<T>;
-
-    /**
-     * @typedef que
-     * @brief Alias for std::queue<T>.
-     */
-    template <typename T>
-    using que = std::queue<T>;
-
-    /**
-     * @typedef hash_map
-     * @brief Alias for std::unordered_map<T, U>.
-     */
-    template <typename T, typename U>
-    using hash_map = std::unordered_map<T, U>;
-
-    /**
-     * @typedef initList
-     * @brief Alias for std::initializer_list<T>.
-     */
-    template <typename T>
-    using initList = std::initializer_list<T>;
-
-}
-
-#endif // __cplusplus
-
 #endif
 
 #endif // OPENCF___CFROST___MICROS_STRUCTURE_H
